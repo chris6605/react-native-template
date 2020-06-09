@@ -1,0 +1,36 @@
+{
+  "tabBar": {
+    "borderStyle": "#eee",
+    "backgroundColor": "#fff",
+    "color": "#222",
+    "selectedColor": "#3159E4",
+    "list": [
+      {
+        "pagePath": "HomeIndexPage",
+        "name": "首页",
+        "icon": "tab_home",
+        "selectedIcon": "tab_home"
+      },
+      {
+             "pagePath": "InformationIndexPage",
+             "name": "资讯",
+             "icon": "tab_info",
+             "selectedIcon": "tab_info"
+    },
+      {
+        "pagePath": "ShopIndexPage",
+        "name": "商城",
+        "icon": "tab_shop",
+        "selectedIcon": "tab_shop"
+      },
+     
+      {
+        "pagePath": "MineIndexPage",
+        "name": "我的",
+        "icon": "tab_mine",
+        "selectedIcon": "tab_mine"
+      }
+    ]
+  }
+ 
+}

@@ -1,0 +1,10 @@
+{
+  "code": 200,
+  "msg": "",
+  "data": {
+    "platform": "android",
+    "buildCode": "",
+    "isForce": true,
+    "info": ""
+  }
+}

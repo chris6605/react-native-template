@@ -1,0 +1,46 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+
+  before_all do
+    sh("git checkout develop && git pull")
+  end
+
+  # desc "Runs all the tests"
+  # lane :test do
+  #  gradle(task: "test")
+  # end
+
+  desc "打正式包并上传至蒲公英"
+  lane :release do
+    # sh("cp -a ../app/build/outputs/apk/release/app-release.apk ../../dist/")
+    puts "打Release包"
+    gradle(task: "clean assembleRelease")
+    puts "上传到蒲公英"
+    pgyer(api_key: "215e690c428871126c502f9192cc08cb", user_key: "543aff2f031cff3d46f76aafd3e65862", password: "701", install_type: "2")
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  # desc "Deploy a new version to the Google Play"
+  # lane :deploy do
+  #   gradle(task: "clean assembleRelease")
+  #   upload_to_play_store
+  # end
+end
